@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Data formats &mdash; peakTree 0.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="api documentation" href="api_documentation.html" />
+    <link rel="prev" title="Polarimetry" href="polarimetry.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> peakTree
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peak_finding.html">Peak finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarimetry.html">Polarimetry</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data formats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#array">Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dictionary">Dictionary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_documentation.html">api documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">peakTree</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Data formats</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/data_format.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-formats">
+<h1>Data formats<a class="headerlink" href="#data-formats" title="Permalink to this headline">¶</a></h1>
+<p>Within peakTree basically two data formats are used to handle the trees.</p>
+<div class="section" id="array">
+<h2>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
+<p>The first one is array based and used to save the trees into netcdf4 files.
+Such files are the output of the conversion from Doppler spectra to trees.
+A variable exists for each moment <code class="docutils literal notranslate"><span class="pre">Z</span></code>, <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code> , … with a nodes
+value saved according to its index. Hence, the array might be sparse.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+<span class="n">v</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+<span class="n">width</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To reconstruct the tree, the variable <code class="docutils literal notranslate"><span class="pre">parent</span></code> holds the index of a nodes parent
+node. The <a class="reference internal" href="api_documentation.html#peakTree.peakTreeBuffer.get_tree_at" title="peakTree.peakTreeBuffer.get_tree_at"><code class="xref py py-meth docutils literal notranslate"><span class="pre">peakTree.peakTreeBuffer.get_tree_at()</span></code></a> provieds a reading routine.</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parent</span><span class="p">[</span><span class="mi">1632</span><span class="p">,</span><span class="mi">13</span><span class="p">,:]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="o">--</span> <span class="o">--</span> <span class="mf">2.0</span> <span class="mf">2.0</span><span class="p">]</span>
+<span class="n">Z</span><span class="p">[</span><span class="mi">1632</span><span class="p">,</span><span class="mi">13</span><span class="p">,:]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">5.2</span> <span class="o">-</span><span class="mf">17.0</span> <span class="o">-</span><span class="mf">5.4</span> <span class="o">--</span> <span class="o">--</span> <span class="o">-</span><span class="mf">5.6</span> <span class="o">-</span><span class="mf">19.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dictionary">
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
+<p>The second one contains the tree as a dictionary in a 2d list (either as a numpy array with
+dtype object or a javascript/json list of list with objects).
+Each entry of the dictionary contains the moments of a node.
+The trees are stored inside a dictionary under the key <code class="docutils literal notranslate"><span class="pre">var</span></code> with the additional keys
+<code class="docutils literal notranslate"><span class="pre">ts</span></code>, <code class="docutils literal notranslate"><span class="pre">rg</span></code>, <code class="docutils literal notranslate"><span class="pre">dimlabel</span></code> and <code class="docutils literal notranslate"><span class="pre">paraminfo</span></code> providing meta information.
+This format is used for the interactive visualizer and grouping into particle populations.</p>
+<div class="code javascript highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="n">times</span><span class="o">...</span>
+  <span class="p">[</span>
+    <span class="n">ranges</span><span class="o">...</span>
+    <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;bounds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">164</span><span class="p">],</span> <span class="s2">&quot;prominence&quot;</span><span class="p">:</span> <span class="mf">6955.19</span><span class="p">,</span> <span class="s2">&quot;skew&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.2946</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.7237</span><span class="p">,</span>
+       <span class="s2">&quot;ldrmax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">13.8709</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.4588</span><span class="p">,</span> <span class="s2">&quot;thres&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">52.1102</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">5.2166</span><span class="p">,</span> <span class="s2">&quot;ldr&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">17.102</span><span class="p">,</span>
+       <span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]},</span>
+     <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;bounds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">110</span><span class="p">],</span> <span class="s2">&quot;prominence&quot;</span><span class="p">:</span> <span class="mf">3.1156</span><span class="p">,</span> <span class="s2">&quot;skew&quot;</span><span class="p">:</span> <span class="mf">0.3129</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.5912</span><span class="p">,</span>
+       <span class="s2">&quot;ldrmax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">26.2039</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.099</span><span class="p">,</span> <span class="s2">&quot;thres&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">27.7299</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">17.0026</span><span class="p">,</span> <span class="s2">&quot;ldr&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">25.3611</span><span class="p">,</span>
+       <span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+     <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;bounds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">164</span><span class="p">],</span> <span class="s2">&quot;prominence&quot;</span><span class="p">:</span> <span class="mf">25.3677</span><span class="p">,</span> <span class="s2">&quot;skew&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.0628</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.6729</span><span class="p">,</span>
+       <span class="s2">&quot;ldrmax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">13.8709</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.3627</span><span class="p">,</span> <span class="s2">&quot;thres&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">27.7299</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">5.4885</span><span class="p">,</span> <span class="s2">&quot;ldr&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">16.8673</span><span class="p">,</span>
+       <span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+     <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;bounds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">126</span><span class="p">],</span> <span class="s2">&quot;prominence&quot;</span><span class="p">:</span> <span class="mf">22.9612</span><span class="p">,</span> <span class="s2">&quot;skew&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1676</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.6873</span><span class="p">,</span>
+       <span class="s2">&quot;ldrmax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">13.8709</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.3429</span><span class="p">,</span> <span class="s2">&quot;thres&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">27.297</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">5.6327</span><span class="p">,</span> <span class="s2">&quot;ldr&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">16.7911</span><span class="p">,</span>
+       <span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+     <span class="mi">6</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;bounds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">126</span><span class="p">,</span> <span class="mi">164</span><span class="p">],</span> <span class="s2">&quot;prominence&quot;</span><span class="p">:</span> <span class="mf">1.3913</span><span class="p">,</span> <span class="s2">&quot;skew&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1692</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="mf">0.0501</span><span class="p">,</span>
+       <span class="s2">&quot;ldrmax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">21.6985</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.0901</span><span class="p">,</span> <span class="s2">&quot;thres&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">27.297</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">19.5505</span><span class="p">,</span> <span class="s2">&quot;ldr&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">18.7583</span><span class="p">,</span>
+       <span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+    <span class="o">...</span>
+  <span class="p">]</span>
+  <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="api_documentation.html" class="btn btn-neutral float-right" title="api documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="polarimetry.html" class="btn btn-neutral float-left" title="Polarimetry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022 M. Radenz, T. Vogl.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

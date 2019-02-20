@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Polarimetry &mdash; peakTree 0.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data formats" href="data_format.html" />
+    <link rel="prev" title="Peak finding" href="peak_finding.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> peakTree
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peak_finding.html">Peak finding</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Polarimetry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ldr-mode">LDR mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ldr-and-ldrmax">LDR and LDRmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stsr-mode">STSR mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_format.html">Data formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_documentation.html">api documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">peakTree</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Polarimetry</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/polarimetry.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="polarimetry">
+<h1>Polarimetry<a class="headerlink" href="#polarimetry" title="Permalink to this headline">¶</a></h1>
+<p>Spectral polarimetric variables can be calculated for two configurations: <code class="docutils literal notranslate"><span class="pre">STSR</span></code> and <code class="docutils literal notranslate"><span class="pre">LDR</span></code>.</p>
+<div class="figure" id="id6" style="width: 80%">
+<img alt="Scheme of the polarimetric configurations" src="_images/radar_pol_scheme.png" />
+<p class="caption"><span class="caption-text">Scheme of the polarimetric configurations.</span></p>
+</div>
+<div class="section" id="ldr-mode">
+<h2>LDR mode<a class="headerlink" href="#ldr-mode" title="Permalink to this headline">¶</a></h2>
+<p>With this configuration, the LDR can be calculated directly</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{LDR} = \frac{&lt;E_\mathrm{x}^2&gt;}{&lt;E_\mathrm{c}^2&gt;}\]</div>
+</div>
+<div class="section" id="ldr-and-ldrmax">
+<h2>LDR and LDRmax<a class="headerlink" href="#ldr-and-ldrmax" title="Permalink to this headline">¶</a></h2>
+<p>The polarimetric properties are calculated as a peak average (with filtering of cross-channel noise and decoupling) as well as at the maximum of the co-channel reflectivity (ignoring cross-channel noise level and decoupling).</p>
+<div class="figure" id="id7" style="width: 70%">
+<img alt="Illustration of LDR and LDRmax" src="_images/spec_to_tree_one_example_ldr.png" />
+<p class="caption"><span class="caption-text">Illustration of LDR and LDRmax.</span></p>
+</div>
+</div>
+<div class="section" id="stsr-mode">
+<h2>STSR mode<a class="headerlink" href="#stsr-mode" title="Permalink to this headline">¶</a></h2>
+<p>A radar in STSR mode configuration transmits and receives the signal Simultaneous in the V and H channel. The co- and cross channel signal have to be calculated <a class="reference internal" href="#myagkov-et-al-2016" id="id1">[Myagkov_et_al_2016]</a>.
+In the files provided for the RPG FMCW the total spectra are saved in the <code class="docutils literal notranslate"><span class="pre">VSpec</span></code> variable, <span class="math notranslate nohighlight">\((H + V + 2 \,\operatorname{\mathbb{R}e} \{\mathrm{Cov}\})/4\)</span>, while the H spectrum is given as it is.</p>
+<ul class="simple">
+<li>(re-)calculate the V spec</li>
+<li>calculate spectral rhv</li>
+<li>calculate the LDR</li>
+</ul>
+<p>With the STSR configuration, the LDR cannot be observed directly, but has to be calculated from the correlation coefficient.
+Following the assumption of isotropic scatterers <a class="reference internal" href="#galletti-zrnic-2012" id="id2">[Galletti_Zrnic_2012]</a> and reflection symmetry <a class="reference internal" href="#galletti-et-al-2011" id="id3">[Galletti_et_al_2011]</a>, as done in <a class="reference external" href="https://github.com/actris-cloudnet/rpgpy/blob/master/rpgpy/spcutil.py">rpgpy</a> <code class="docutils literal notranslate"><span class="pre">calc_spectral_LDR()</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{SLDR} = 10 \log_{10} \left( \frac{1-\varrho_\mathrm{hv}}{1+\varrho_\mathrm{hv}} \right)\]</div>
+<p>With  <span class="math notranslate nohighlight">\(\varrho_\mathrm{hv} = \varrho_s\)</span> for vertical looking observations (Eq. 12 <a class="reference internal" href="#galletti-zrnic-2012" id="id4">[Galletti_Zrnic_2012]</a>).</p>
+<p>Alternatively, there is also an alternative approach by Myagkov <a class="reference internal" href="#myagkov-pers-comm" id="id5">[Myagkov_pers_comm]</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathrm{SLDR} &amp;= 10 \log_{10} \left( \frac{Z_\mathrm{cx}}{Z_\mathrm{co}} \right) \\
+Z_\mathrm{cx} &amp;= \left( Z_\mathrm{h} + Z_\mathrm{v} \right) \left(1 - \varrho_s \right) \\
+Z_\mathrm{co} &amp;= \left( Z_\mathrm{h} + Z_\mathrm{v} \right) \left(1 + \varrho_s \right)\end{split}\]</div>
+<p>where low signals in the cross-channel can be more easily filtered.</p>
+<table class="docutils citation" frame="void" id="galletti-et-al-2011" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[Galletti_et_al_2011]</a></td><td>Galletti, M., Zrnic, D.S., Melnikov, V.M., Doviak, R.J., 2011. Degree of polarization: theory and applications for weather radar at LDR mode, in: 2011 IEEE RadarCon (RADAR). Presented at the 2011 IEEE Radar Conference (RadarCon), IEEE, Kansas City, MO, USA, pp. 039–044. <a class="reference external" href="https://doi.org/10.1109/RADAR.2011.5960495">https://doi.org/10.1109/RADAR.2011.5960495</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="galletti-zrnic-2012" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Galletti_Zrnic_2012]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> Galletti, M., Zrnic, D.S., 2012. Degree of Polarization at Simultaneous Transmit: Theoretical Aspects. IEEE Geosci. Remote Sensing Lett. 9, 383–387. <a class="reference external" href="https://doi.org/10.1109/LGRS.2011.2170150">https://doi.org/10.1109/LGRS.2011.2170150</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="myagkov-et-al-2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Myagkov_et_al_2016]</a></td><td>Myagkov, A., Seifert, P., Bauer-Pfundstein, M., and Wandinger, U., 2016. Cloud radar with hybrid mode towards estimation of shape and orientation of ice crystals, Atmos. Meas. Tech., 9, 469–489, <a class="reference external" href="https://doi.org/10.5194/amt-9-469-2016">https://doi.org/10.5194/amt-9-469-2016</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="myagkov-pers-comm" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[Myagkov_pers_comm]</a></td><td>personal communication</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="data_format.html" class="btn btn-neutral float-right" title="Data formats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="peak_finding.html" class="btn btn-neutral float-left" title="Peak finding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022 M. Radenz, T. Vogl.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>peakTree &mdash; peakTree 0.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="peakTree documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> peakTree
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#define-the-peakfinding-paramters">1. Define the peakfinding paramters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-a-spectra-file-to-peaktree-netcdf-output">2. Convert a spectra file to peakTree netcdf output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plot-a-peaktree-netcdf-file">3. Plot a peakTree netcdf file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#binary-tree-structure">Binary tree structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peak_finding.html">Peak finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarimetry.html">Polarimetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_format.html">Data formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_documentation.html">api documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">peakTree</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>peakTree</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/README.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="peaktree">
+<h1>peakTree<a class="headerlink" href="#peaktree" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.2577387"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.2577387.svg" /></a></p>
+<p>Software for converting multi-peaked (cloud) radar Doppler spectra into a binary tree structure.</p>
+<p>Technical documentation is available at <a class="reference external" href="https://martin-rdz.github.io/peakTree-doc/">peakTree-doc</a></p>
+<p>See also
+Radenz, M., Bühl, J., Seifert, P., Griesche, H., and Engelmann, R.: peakTree: a framework for structure-preserving radar Doppler spectra analysis, Atmos. Meas. Tech., 12, 4813–4828, <a class="reference external" href="https://doi.org/10.5194/amt-12-4813-2019">https://doi.org/10.5194/amt-12-4813-2019</a>, 2019.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>peakTree requires python3 with following packages:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">==</span><span class="mf">1.14.5</span>
+<span class="n">graphviz</span><span class="o">==</span><span class="mf">0.8.2</span>
+<span class="n">matplotlib</span><span class="o">==</span><span class="mf">2.2.2</span>
+<span class="n">netCDF4</span><span class="o">==</span><span class="mf">1.4.2</span>
+<span class="n">numba</span><span class="o">==</span><span class="mf">0.37.0</span>
+<span class="n">toml</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>The peakTree software package should be included in a file structure similar to this example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── data                    [input spectra]
+├── docs                    [code to generate the documentation using sphinx]
+│   ├── Makefile
+│   └── source
+├── output                  [converted data]
+├── peakTree
+│   ├── helpers.py
+│   ├── __init__.py
+│   ├── print_tree.py
+│   ├── test_peakTree.py
+│   └── VIS_Colormaps.py
+├── plot2d.py
+├── convert_to_json.py
+├── plots                   [standard folder for plots]
+├── reader_example.py
+├── README.md
+├── instrument_config.toml  [radar specific configuration]
+├── output_meta.toml        [add your meta information here]
+├── requirements.txt
+├── run_conversion.py
+├── run_plots.sh
+├── run_doc_and_tests.sh
+└── spectrum_example.py
+</pre></div>
+</div>
+<p>Please update your meta information in the <code class="docutils literal notranslate"><span class="pre">output_meta.toml</span></code> file.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="define-the-peakfinding-paramters">
+<h3>1. Define the peakfinding paramters<a class="headerlink" href="#define-the-peakfinding-paramters" title="Permalink to this headline">¶</a></h3>
+<p><strong>WIP:</strong> The peakfinding parameters are now compatible with the output of peako <a class="reference external" href="https://doi.org/10.5194/amt-12-4591-2019">[Kalesse et al. 2019 AMT]</a>.
+They have to be configured in the <code class="docutils literal notranslate"><span class="pre">instrument_config.toml</span></code> together with some instrument specific meta data.
+The parameters are chirp aware.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">limrad_punta</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">peak_finding_params</span><span class="o">.</span><span class="n">chirp2</span><span class="p">]</span>
+    <span class="n">t_avg</span> <span class="o">=</span> <span class="mi">15</span>           <span class="c1"># s</span>
+    <span class="n">h_avg</span> <span class="o">=</span> <span class="mi">0</span>            <span class="c1"># m</span>
+    <span class="n">span</span> <span class="o">=</span> <span class="mf">0.2</span>           <span class="c1"># m s-1</span>
+    <span class="n">smooth_polyorder</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">prom_thres</span> <span class="o">=</span> <span class="mf">0.5</span>     <span class="c1"># dB</span>
+    <span class="n">width_thres</span> <span class="o">=</span> <span class="mi">0</span>      <span class="c1"># m s-1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="convert-a-spectra-file-to-peaktree-netcdf-output">
+<h3>2. Convert a spectra file to peakTree netcdf output<a class="headerlink" href="#convert-a-spectra-file-to-peaktree-netcdf-output" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /usr/bin/env python3</span>
+<span class="c1"># coding=utf-8</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">peakTree</span>
+<span class="kn">import</span> <span class="nn">peakTree.helpers</span> <span class="k">as</span> <span class="nn">h</span>
+
+<span class="n">pTB</span> <span class="o">=</span> <span class="n">peakTree</span><span class="o">.</span><span class="n">peakTreeBuffer</span><span class="p">()</span>
+<span class="n">pTB</span> <span class="o">=</span> <span class="n">peakTree</span><span class="o">.</span><span class="n">peakTreeBuffer</span><span class="p">(</span><span class="n">system</span><span class="o">=</span><span class="s1">&#39;Polarstern&#39;</span><span class="p">)</span>
+<span class="n">pTB</span><span class="o">.</span><span class="n">load_spec_file</span><span class="p">(</span><span class="s1">&#39;data/D20170629_T0830_0945_Pol_zspc2nc_v1_02_standard.nc4&#39;</span><span class="p">)</span>
+<span class="n">pTB</span><span class="o">.</span><span class="n">assemble_time_height</span><span class="p">(</span><span class="s1">&#39;output/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plot-a-peaktree-netcdf-file">
+<h3>3. Plot a peakTree netcdf file<a class="headerlink" href="#plot-a-peaktree-netcdf-file" title="Permalink to this headline">¶</a></h3>
+<p>A default plotting script is also included.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">plot2d</span><span class="o">.</span><span class="n">py</span> <span class="n">output</span><span class="o">/</span><span class="mi">20170629_0830</span><span class="n">_Pol_peakTree</span><span class="o">.</span><span class="n">nc4</span> <span class="o">--</span><span class="nb">range</span><span class="o">-</span><span class="n">interval</span> <span class="mi">400</span><span class="p">,</span><span class="mi">5000</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">nodes</span> <span class="mi">2</span>
+<span class="c1"># or with more options</span>
+<span class="n">python3</span> <span class="n">plot2d</span><span class="o">.</span><span class="n">py</span> <span class="n">output</span><span class="o">/</span><span class="mi">20181216_1510</span><span class="n">_Pun_peakTree</span><span class="o">.</span><span class="n">nc4</span>  <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">nodes</span> <span class="mi">2</span> <span class="o">--</span><span class="n">plotsubfolder</span> <span class="n">peaktree_limrad</span> <span class="o">--</span><span class="n">system</span> <span class="n">limrad_peako</span> <span class="o">--</span><span class="nb">range</span><span class="o">-</span><span class="n">interval</span> <span class="nb">min</span><span class="p">,</span><span class="mi">3000</span>
+<span class="c1">#</span>
+<span class="n">python3</span> <span class="n">plot2d</span><span class="o">.</span><span class="n">py</span> <span class="n">output</span><span class="o">/</span><span class="mi">20190911_0300</span><span class="n">_Pun_rpgpy_peakTree</span><span class="o">.</span><span class="n">nc4</span> <span class="o">--</span><span class="nb">range</span><span class="o">-</span><span class="n">interval</span> <span class="mi">100</span><span class="p">,</span><span class="mi">7000</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">nodes</span> <span class="mi">6</span> <span class="o">--</span><span class="n">system</span> <span class="n">limrad_punta</span> <span class="o">--</span><span class="n">plotsubfolder</span> <span class="n">peaktree_limrad_punta</span>
+</pre></div>
+</div>
+<p>convert a peakTree netcdf file to dictionary format</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">convert_to_json</span><span class="o">.</span><span class="n">py</span> <span class="n">output</span><span class="o">/</span><span class="mi">20170629_0830</span><span class="n">_Pol_peakTree</span><span class="o">.</span><span class="n">nc4</span> <span class="n">output</span><span class="o">/</span><span class="mi">20170629_0830</span><span class="n">_data</span> \
+ <span class="o">--</span><span class="n">time</span><span class="o">-</span><span class="n">interval</span> <span class="mi">0</span><span class="o">-</span><span class="mi">450</span> <span class="o">--</span><span class="nb">range</span><span class="o">-</span><span class="n">interval</span> <span class="mi">0</span><span class="o">-</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="binary-tree-structure">
+<h2>Binary tree structure<a class="headerlink" href="#binary-tree-structure" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Binary tree nomenclature and conventions" src="_images/binary_tree_colored.png" /></p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Copyright 2022, Martin Radenz, Teresa Vogl
+<a class="reference external" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="peakTree documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022 M. Radenz, T. Vogl.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
