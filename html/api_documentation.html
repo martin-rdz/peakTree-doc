@@ -1,0 +1,917 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api documentation &mdash; peakTree 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="peakTree 0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Data formats" href="data_format.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> peakTree
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_format.html">Data formats</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">api documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-peakTree">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-peakTree.print_tree">print_tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-peakTree.helpers">helpers</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">peakTree</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>api documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/api_documentation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-documentation">
+<h1>api documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-peakTree">
+<span id="main-module"></span><h2>main module<a class="headerlink" href="#module-peakTree" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="peakTree.detect_peak_simple">
+<code class="descclassname">peakTree.</code><code class="descname">detect_peak_simple</code><span class="sig-paren">(</span><em>array</em>, <em>lthres</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#detect_peak_simple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.detect_peak_simple" title="Permalink to this definition">¶</a></dt>
+<dd><p>detect noise separated peaks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>array</strong> – with Doppler spectrum</li>
+<li><strong>lthres</strong> – threshold</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of indices (as tuple)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.get_minima">
+<code class="descclassname">peakTree.</code><code class="descname">get_minima</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#get_minima"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.get_minima" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the minima of an array by calculating the derivative</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of <code class="docutils literal notranslate"><span class="pre">(index,</span> <span class="pre">value</span> <span class="pre">at</span> <span class="pre">index)</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.split_peak_ind_by_space">
+<code class="descclassname">peakTree.</code><code class="descname">split_peak_ind_by_space</code><span class="sig-paren">(</span><em>peak_ind</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#split_peak_ind_by_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.split_peak_ind_by_space" title="Permalink to this definition">¶</a></dt>
+<dd><p>split a list of peak indices by their maximum space
+use for noise floor separated peaks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>peak_ind</strong> – list of peak indices <code class="docutils literal notranslate"><span class="pre">[(163,</span> <span class="pre">165),</span> <span class="pre">(191,</span> <span class="pre">210),</span> <span class="pre">(222,</span> <span class="pre">229),</span> <span class="pre">(248,</span> <span class="pre">256)]</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">left sublist, right sublist</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.peak_pairs_to_call">
+<code class="descclassname">peakTree.</code><code class="descname">peak_pairs_to_call</code><span class="sig-paren">(</span><em>peak_ind</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#peak_pairs_to_call"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.peak_pairs_to_call" title="Permalink to this definition">¶</a></dt>
+<dd><p>generator that yields the tree structure of a peak list based on spacing</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>peak_ind</strong> – list of peak indices</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body">tree structure for noise separated peaks (includes recursive <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">from</span></code> for children)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="peakTree.Node">
+<em class="property">class </em><code class="descclassname">peakTree.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>bounds</em>, <em>spec_chunk</em>, <em>noise_thres</em>, <em>root=False</em>, <em>parent_lvl=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#Node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>class to generate the tree</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bounds</strong> – boundaries in bin coordinates</li>
+<li><strong>spec_chunk</strong> – spectral reflectivity within this node</li>
+<li><strong>noise_thres</strong> – noise threshold hat separated this peak</li>
+<li><strong>root</strong> – flag indicating if root node</li>
+<li><strong>parent_lvl</strong> – level of the parent node</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="peakTree.Node.add_noise_sep">
+<code class="descname">add_noise_sep</code><span class="sig-paren">(</span><em>bounds_left</em>, <em>bounds_right</em>, <em>thres</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#Node.add_noise_sep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.Node.add_noise_sep" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a nose separated peak/node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bounds_left</strong> – boundaries of the left peak</li>
+<li><strong>bounds_right</strong> – boundaries of the right peak</li>
+<li><strong>thres</strong> – threshold that separates the peaks</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="peakTree.Node.add_min">
+<code class="descname">add_min</code><span class="sig-paren">(</span><em>new_index</em>, <em>current_thres</em>, <em>ignore_prom=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#Node.add_min"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.Node.add_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a local minimum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>new_index</strong> – bin index of minimum</li>
+<li><strong>current_threshold</strong> – reflectivity that separates the peaks</li>
+<li><strong>ignore_prom</strong> (<em>optional</em>) – ignore the prominence threshold</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.traverse">
+<code class="descclassname">peakTree.</code><code class="descname">traverse</code><span class="sig-paren">(</span><em>Node</em>, <em>coords</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#traverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>traverse a node and recursively all subnodes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Node</strong> (<a class="reference internal" href="#peakTree.Node" title="peakTree.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a>) – Node object to traverse</li>
+<li><strong>coords</strong> – Nodes coordinate as list</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last">all child nodes recursively”</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.full_tree_id">
+<code class="descclassname">peakTree.</code><code class="descname">full_tree_id</code><span class="sig-paren">(</span><em>coord</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#full_tree_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.full_tree_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert a coordinate to the id from the full binary tree</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coord</strong> – Nodes coordinate as a list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">index as in full binary tree</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="mi">0</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="mi">2</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.coords_to_id">
+<code class="descclassname">peakTree.</code><code class="descname">coords_to_id</code><span class="sig-paren">(</span><em>traversed</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#coords_to_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.coords_to_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the id in level-order from the coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>input</strong> – traversed tree as list of dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">traversed tree (dict) with id as key</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.moment">
+<code class="descclassname">peakTree.</code><code class="descname">moment</code><span class="sig-paren">(</span><em>x</em>, <em>Z</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#moment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>mean, rms, skew for a vel, Z part of the spectrum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – velocity of bin</li>
+<li><strong>Z</strong> – spectral reflectivity</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict with v, width, skew</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.calc_moments">
+<code class="descclassname">peakTree.</code><code class="descname">calc_moments</code><span class="sig-paren">(</span><em>spectrum</em>, <em>bounds</em>, <em>thres</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#calc_moments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.calc_moments" title="Permalink to this definition">¶</a></dt>
+<dd><p>calc the moments following the formulas given by Görsdorf2015 and Maahn2017</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>spectrum</strong> – spectrum dict</li>
+<li><strong>bounds</strong> – boundaries (bin no)</li>
+<li><strong>thres</strong> – threshold used</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>moment, spectrum</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.calc_moments_wo_LDR">
+<code class="descclassname">peakTree.</code><code class="descname">calc_moments_wo_LDR</code><span class="sig-paren">(</span><em>spectrum</em>, <em>bounds</em>, <em>thres</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#calc_moments_wo_LDR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.calc_moments_wo_LDR" title="Permalink to this definition">¶</a></dt>
+<dd><p>calc the moments following the formulas given by Görsdorf2015 and Maahn2017</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>spectrum</strong> – spectrum dict</li>
+<li><strong>bounds</strong> – boundaries (bin no)</li>
+<li><strong>thres</strong> – threshold used</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>moment, spectrum</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.tree_from_spectrum">
+<code class="descclassname">peakTree.</code><code class="descname">tree_from_spectrum</code><span class="sig-paren">(</span><em>spectrum</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#tree_from_spectrum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.tree_from_spectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate the tree and return a traversed version</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spectrum</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ts&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">timestamps</span><span class="p">[</span><span class="n">it</span><span class="p">],</span> <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">range</span><span class="p">[</span><span class="n">ir</span><span class="p">],</span> <span class="s1">&#39;vel&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">,</span>
+    <span class="s1">&#39;specZ&#39;</span><span class="p">:</span> <span class="n">specZ</span><span class="p">,</span> <span class="s1">&#39;noise_thres&#39;</span><span class="p">:</span> <span class="n">specZ</span><span class="o">.</span><span class="n">min</span><span class="p">()}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spectrum</strong> (<em>dict</em>) – spectra dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">traversed tree</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.saveVar">
+<code class="descclassname">peakTree.</code><code class="descname">saveVar</code><span class="sig-paren">(</span><em>dataset</em>, <em>varData</em>, <em>dtype=&lt;class 'numpy.float32'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#saveVar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.saveVar" title="Permalink to this definition">¶</a></dt>
+<dd><p>save an item to the dataset with data in a dict</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>(</strong> (<em>dataset</em>) – obj:netCDF4.Dataset): netcdf4 Dataset to add to</li>
+<li><strong>dtype</strong> – datatype of the array</li>
+<li><strong>varData</strong> (<em>dict</em>) – data to add, for example:</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">var_name</span></code></td>
+<td>name of the variable</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">dimension</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">('time',</span> <span class="pre">'height')</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">arr</span></code></td>
+<td>data</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">long_name</span></code></td>
+<td>descriptive long name</td>
+</tr>
+<tr class="row-even"><td><strong>optional</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">comment</span></code></td>
+<td>description as a sentence</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">units</span></code></td>
+<td>string with units</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">units_html</span></code></td>
+<td>units in the html formatting</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">missing_value</span></code></td>
+<td>define missing value</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">plot_range</span></code></td>
+<td>tuple of range to plot</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">plot_scale</span></code></td>
+<td>“linear” or “log”</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">axis</span></code></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.get_git_hash">
+<code class="descclassname">peakTree.</code><code class="descname">get_git_hash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#get_git_hash"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.get_git_hash" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">git describe string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.time_index">
+<code class="descclassname">peakTree.</code><code class="descname">time_index</code><span class="sig-paren">(</span><em>timestamps</em>, <em>sel_ts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#time_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.time_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the index of a timestamp in the list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>timestamps</strong> – array</li>
+<li><strong>sel_ts</strong> – timestamp whose index is required</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.get_time_grid">
+<code class="descclassname">peakTree.</code><code class="descname">get_time_grid</code><span class="sig-paren">(</span><em>timestamps</em>, <em>ts_range</em>, <em>time_interval</em>, <em>filter_empty=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#get_time_grid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.get_time_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the mapping from timestamp indices to gridded times
+eg for use in interpolation routines</p>
+<p>TODO link to gist</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>timestamps</strong> – list of timestamps</li>
+<li><strong>ts_range</strong> – range fo the gridded timestamps</li>
+<li><strong>time_interval</strong> – interval of the gridded timestamps</li>
+<li><strong>filter_empty</strong> (<em>bool</em><em>, </em><em>optional</em>) – include the bins that are empty</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of (timestamp_begin, timestamp_end, grid_mid, index_begin, index_end, no_indices)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="peakTree.peakTreeBuffer">
+<em class="property">class </em><code class="descclassname">peakTree.</code><code class="descname">peakTreeBuffer</code><span class="sig-paren">(</span><em>system='Lacros'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#peakTreeBuffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.peakTreeBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>trees for a time-height chunk</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>system</strong> (<em>string</em>) – specify the system/campaign</td>
+</tr>
+</tbody>
+</table>
+<p>The attribute setting may contain</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">decoupling</span></code></td>
+<td>decoupling of the crosschannel</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">smooth</span></code></td>
+<td>flag if smoothing should be applied</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">grid_time</span></code></td>
+<td>time in seconds to average the spectra</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">max_no_nodes</span></code></td>
+<td>number of nodes to save</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">thres_factor_co</span></code></td>
+<td>factor between noise_lvl and noise thres in co channel</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">thres_factor_cx</span></code></td>
+<td>factor between noise_lvl and noise thres in cross ch.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">station_altitude</span></code></td>
+<td>height of station above msl</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="peakTree.peakTreeBuffer.load_spec_file">
+<code class="descname">load_spec_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#peakTreeBuffer.load_spec_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.peakTreeBuffer.load_spec_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>load spectra from raw file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> – specify file</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="peakTree.peakTreeBuffer.load_peakTree_file">
+<code class="descname">load_peakTree_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#peakTreeBuffer.load_peakTree_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.peakTreeBuffer.load_peakTree_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>load preprocessed peakTree file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> – specify file</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="peakTree.peakTreeBuffer.get_tree_at">
+<code class="descname">get_tree_at</code><span class="sig-paren">(</span><em>sel_ts</em>, <em>sel_range</em>, <em>temporal_average=False</em>, <em>silent=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#peakTreeBuffer.get_tree_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.peakTreeBuffer.get_tree_at" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a single tree
+either from the spectrum directly (prior call of load_spec_file())
+or from the pre-converted file (prior call of load_peakTree_file())</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sel_ts</strong> (<em>tuple</em><em> or </em><em>float</em>) – either value or (index, value)</li>
+<li><strong>sel_range</strong> (<em>tuple</em><em> or </em><em>float</em>) – either value or (index, value)</li>
+<li><strong>temporal_average</strong> (<em>optional</em>) – aberage over the interval
+(tuple of bin in time dimension or number of seconds)</li>
+<li><strong>silent</strong> – verbose output</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary with all nodes and the parameters of each node</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="peakTree.peakTreeBuffer.assemble_time_height">
+<code class="descname">assemble_time_height</code><span class="sig-paren">(</span><em>outdir</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree.html#peakTreeBuffer.assemble_time_height"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.peakTreeBuffer.assemble_time_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert a whole spectra file to the peakTree node file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>outdir</strong> – directory for the output</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-peakTree.print_tree">
+<span id="print-tree"></span><h2>print_tree<a class="headerlink" href="#module-peakTree.print_tree" title="Permalink to this headline">¶</a></h2>
+<p>output of visualized trees as text, plots and schematic graphs</p>
+<dl class="function">
+<dt id="peakTree.print_tree.coord_pattern_child">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">coord_pattern_child</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#coord_pattern_child"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.coord_pattern_child" title="Permalink to this definition">¶</a></dt>
+<dd><p>the coordinate pattern required for filtering the dictionary for children
+for use in <a class="reference internal" href="#peakTree.print_tree.iterchilds" title="peakTree.print_tree.iterchilds"><code class="xref py py-func docutils literal notranslate"><span class="pre">iterchilds()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> – coordinate of parent</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">function that thest if a coordinate is a child of p</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.iterchilds">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">iterchilds</code><span class="sig-paren">(</span><em>travtree</em>, <em>parentcoord</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#iterchilds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.iterchilds" title="Permalink to this definition">¶</a></dt>
+<dd><p>generator that yields all childs of a parent with given coordinats
+for use in <a class="reference internal" href="#peakTree.print_tree.iternodes" title="peakTree.print_tree.iternodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">iternodes()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.iternodes">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">iternodes</code><span class="sig-paren">(</span><em>travtree</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#iternodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.iternodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>generator that yields a full traversal of the tree</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.travtree2text">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">travtree2text</code><span class="sig-paren">(</span><em>travtree</em>, <em>show_coordinats=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#travtree2text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.travtree2text" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a string with the tabular representation of the traversed tree</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>travtree</strong> – traversed tree</li>
+<li><strong>show_coordinates</strong> (<em>optional</em>) – include the coordinates</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string with line breaks</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.gen_lines_to_par">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">gen_lines_to_par</code><span class="sig-paren">(</span><em>travtree</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#gen_lines_to_par"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.gen_lines_to_par" title="Permalink to this definition">¶</a></dt>
+<dd><p>get all the connection lines between the nodes of travtree</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of coordinate pairs <code class="docutils literal notranslate"><span class="pre">[(v,z),</span> <span class="pre">..]</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.plot_spectrum">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">plot_spectrum</code><span class="sig-paren">(</span><em>travtree</em>, <em>spectrum</em>, <em>savepath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#plot_spectrum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.plot_spectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot the spectrum together with the traversed tree</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>travtree</strong> – traversed tree</li>
+<li><strong>spectrum</strong> – spectrum dict</li>
+<li><strong>savepath</strong> – either <code class="docutils literal notranslate"><span class="pre">None</span></code> or string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">fig, ax</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.dot_format">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">dot_format</code><span class="sig-paren">(</span><em>travtree</em>, <em>display='table'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#dot_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.dot_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a string for the graphviz dot format</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>travtree</strong> – traversed tree</li>
+<li><strong>display</strong> – either <code class="docutils literal notranslate"><span class="pre">table</span></code> or <code class="docutils literal notranslate"><span class="pre">bounds</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a graphvis compatible definition string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.vis_tree">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">vis_tree</code><span class="sig-paren">(</span><em>dot</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#vis_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.vis_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>visualize the dot string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.format_for_json">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">format_for_json</code><span class="sig-paren">(</span><em>elem</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#format_for_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.format_for_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>json elementwise formatter</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.print_tree.d3_format">
+<code class="descclassname">peakTree.print_tree.</code><code class="descname">d3_format</code><span class="sig-paren">(</span><em>travtree</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/print_tree.html#d3_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.print_tree.d3_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>format the traversed tree in a json compatible manner</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-peakTree.helpers">
+<span id="helpers"></span><h2>helpers<a class="headerlink" href="#module-peakTree.helpers" title="Permalink to this headline">¶</a></h2>
+<p>Collection of common helper functions.</p>
+<dl class="function">
+<dt id="peakTree.helpers.list_of_elem">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">list_of_elem</code><span class="sig-paren">(</span><em>elem</em>, <em>length</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/helpers.html#list_of_elem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.list_of_elem" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a list of given length of given elements</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.helpers.epoch_to_timestamp">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">epoch_to_timestamp</code><span class="sig-paren">(</span><em>time_raw</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/helpers.html#epoch_to_timestamp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.epoch_to_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts raw time (days since year 0) to unix timestamp</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.helpers.dt_to_ts">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">dt_to_ts</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/helpers.html#dt_to_ts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.dt_to_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert a datetime to unix timestamp</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.helpers.ts_to_dt">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">ts_to_dt</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/helpers.html#ts_to_dt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.ts_to_dt" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert a unix timestamp to datetime</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.helpers.lin2z">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">lin2z</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/helpers.html#lin2z"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.lin2z" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate dB values from a array of linear</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.helpers.z2lin">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">z2lin</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/helpers.html#z2lin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.z2lin" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate linear values from a array of dBs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.helpers.fill_with">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">fill_with</code><span class="sig-paren">(</span><em>array</em>, <em>mask</em>, <em>fill</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/helpers.html#fill_with"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.fill_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>fill array with fill value where mask is True</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="peakTree.helpers.flatten">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">flatten</code><span class="sig-paren">(</span><em>xs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peakTree/helpers.html#flatten"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>flatten inhomogeneous deep lists
+e.g. <code class="docutils literal notranslate"><span class="pre">[[1,2,3],4,5,[6,[7,8],9],10]</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="peakTree.helpers.estimate_noise">
+<code class="descclassname">peakTree.helpers.</code><code class="descname">estimate_noise</code><a class="reference internal" href="_modules/peakTree/helpers.html#estimate_noise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#peakTree.helpers.estimate_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Noise estimate based on Hildebrand and Sekhon (1974)</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="data_format.html" class="btn btn-neutral" title="Data formats" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Martin Radenz.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
